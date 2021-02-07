@@ -8,6 +8,10 @@ class Menu extends Component {
            
         };
     }
+
+
+
+    
     render() {
         const menu = this.props.dishes.map((dish) => {
             return(
@@ -236,3 +240,21 @@ class CommentForm extends Component {
 
 
 export default DishDetail
+
+
+// if (this.props.dish != null) {
+//     return (
+//       <div className="container">
+//         <div className="row">
+//           {this.renderDish(this.props.dish)}
+//           {this.renderComments(this.props.dish.comments)}
+//         </div>
+//       </div>
+//     );
+//   } else {
+//     return <div></div>;
+//   }
+
+
+// {this.renderDish(this.props.dish)}
+// {this.renderComments(this.props.dish.comments)}
