@@ -19,12 +19,8 @@ class Main extends Component {
       comments: COMMENTS,
       leaders: LEADERS,
       promotions: PROMOTIONS,
-      //selectedDish: null,
     };
   }
-  // onDishSelected(dishId) {
-  //   this.setState({ selectedDish: dishId });
-  // }
 
   render() {
     const HomePage = () => {
@@ -32,9 +28,22 @@ class Main extends Component {
         <Home
           dish={this.state.dishes.filter((dish) => dish.featured)[0]}
           leader={this.state.leaders.filter((leader) => leader.featured)[0]}
-          promotion={
-            this.state.promotions.filter((prom) => prom.featured)[0]
+          promotion={this.state.promotions.filter((prom) => prom.featured)[0]}
+        />
+      );
+    };
+
+    const DishWithId = ({ match }) => {
+      return (
+        <DishDetails
+          dish={
+            this.state.dishes.filter(
+              (dish) => dish.id === parseInt(match.params.dishId, 10)
+            )[0]
           }
+          comments={this.state.comments.filter(
+            (comment) => comment.dishId === parseInt(match.params.dishId, 10)
+          )}
         />
       );
     };
@@ -48,6 +57,7 @@ class Main extends Component {
             path="/menu"
             component={() => <Menu dishes={this.state.dishes} />}
           />
+          <Route path="/menu/:dishId" component={DishWithId} />
           <Route exact path="/contactus" component={Contact} />
           <Redirect to="/home" />
         </Switch>
@@ -58,15 +68,3 @@ class Main extends Component {
 }
 
 export default Main;
-
-{
-  /* <Menu
-dishes={this.state.dishes}
-onClick={(dishId) => this.onDishSelected(dishId)}
-/>
-<DishDetails
-dish={this.state.dishes.filter(
-  (dish) => dish.id === this.state.selectedDish
-)[0]}
-/> */
-}
