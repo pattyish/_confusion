@@ -9,9 +9,7 @@ const RenderCard = ({ item }) => {
         <CardText>{item.name}</CardText>
         {item.designation ? (
           <CardSubtitle>{item.designation}</CardSubtitle>
-        ) : (
-          null
-        )}
+        ) : null}
         <CardText>{item.descridtion}</CardText>
       </CardBody>
     </Card>
