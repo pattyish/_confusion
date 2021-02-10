@@ -24,6 +24,7 @@ class Header extends Component {
       isNavOpen: false,
       isModalOpen: false,
     };
+    this.inp = React.createRef();
     this.toggleNav = this.toggleNav.bind(this);
     this.toggleMode = this.toggleMode.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
@@ -49,6 +50,7 @@ class Header extends Component {
         " Remember: " +
         this.remember.checked
     );
+    console.log(this.username.value);
     event.preventDefault();
   }
   render() {
@@ -92,8 +94,7 @@ class Header extends Component {
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   <Button outline onClick={this.toggleMode}>
-                    <span className="fa fa-sign-in fa-lg"></span>{" "}
-                    Login
+                    <span className="fa fa-sign-in fa-lg"></span> Login
                   </Button>
                 </NavItem>
               </Nav>
