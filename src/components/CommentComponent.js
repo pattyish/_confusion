@@ -30,8 +30,13 @@ class CommentForm extends Component {
   }
 
   handleSubmit(values) {
-    console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
+    this.toggleCommentModel();
+    this.props.addComment(
+      this.props.dishId,
+      values.rating,
+      values.author,
+      values.comment
+    );
   }
   render() {
     return (
@@ -43,7 +48,9 @@ class CommentForm extends Component {
           isOpen={this.state.isCommentModelOpen}
           toggle={this.toggleCommentModel}
         >
-          <ModalHeader toggle={this.toggleCommentModel}>Submit Comment</ModalHeader>
+          <ModalHeader toggle={this.toggleCommentModel}>
+            Submit Comment
+          </ModalHeader>
           <ModalBody>
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
               <Row className="form-group">
@@ -67,7 +74,7 @@ class CommentForm extends Component {
                 <Col md={12}>
                   <Control.text
                     className="form-control"
-                    model=".name"
+                    model=".author"
                     placeholder="Your Name"
                     validators={{
                       required,
