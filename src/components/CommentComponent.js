@@ -62,7 +62,7 @@ class CommentForm extends Component {
               </Row>
               <Row className="form-group">
                 <Label HtmlFor="name" md={12}>
-                  Name
+                  Author
                 </Label>
                 <Col md={12}>
                   <Control.text
