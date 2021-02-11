@@ -9,6 +9,8 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import CommentForm from "./CommentComponent";
+
 function RenderDish({ dish }) {
   return (
     <Card className="col-12 col-md-5 m-1">
@@ -40,6 +42,7 @@ function RenderComments({ comments }) {
             </li>
           </ul>
         ))}
+        <CommentForm />
       </div>
     );
   } else {
