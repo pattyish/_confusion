@@ -10,7 +10,7 @@ const RenderCard = ({ item }) => {
         {item.designation ? (
           <CardSubtitle>{item.designation}</CardSubtitle>
         ) : null}
-        <CardText>{item.descridtion}</CardText>
+        <CardText>{item.description}</CardText>
       </CardBody>
     </Card>
   );
