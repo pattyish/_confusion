@@ -8,7 +8,7 @@ const RenderCard = ({ item, isLoading, errMess }) => {
     return <Loading />;
   } else if (errMess) {
     return <h4>{errMess}</h4>;
-  } else
+  } else {
     return (
       <Card>
         <CardImg src={baseUrl + item.image} alt={item.name} />
@@ -21,6 +21,7 @@ const RenderCard = ({ item, isLoading, errMess }) => {
         </CardBody>
       </Card>
     );
+  }
 };
 
 function Home(props) {
