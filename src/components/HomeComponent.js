@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardSubtitle } from "reactstrap";
 import { Loading } from "./LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
 import { FadeTransform } from "react-animation-components";
+import CarouselComponent from "./CarouselComponent";
 
 const RenderCard = ({ item, isLoading, errMess }) => {
   if (isLoading) {
@@ -35,6 +36,14 @@ const RenderCard = ({ item, isLoading, errMess }) => {
 function Home(props) {
   return (
     <div className="container">
+      <CarouselComponent carousel={props.carouselDish} />
+      <div className="row">
+        <div className="col-12 col-md my-1">
+          <hr />
+          <h2 style={{ color: "#512DA8" }} > Dishes Available</h2>
+          <hr />
+        </div>
+      </div>
       <div className="row align-items-start">
         <div className="col-12 col-md m-1">
           <RenderCard
@@ -51,10 +60,11 @@ function Home(props) {
           />
         </div>
         <div className="col-12 col-md m-1">
-          <RenderCard item={props.leader} 
+          <RenderCard
+            item={props.leader}
             isLoading={props.leadersLoading}
             errMess={props.leadersFailed}
-           />
+          />
         </div>
       </div>
     </div>

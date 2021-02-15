@@ -87,6 +87,7 @@ class Main extends Component {
           dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
           dishesLoading={this.props.dishes.isLoading}
           dishErrMess={this.props.dishes.errMess}
+          carouselDish={this.props.dishes.dishes}
           promotion={
             this.props.promotions.promotions.filter(
               (promo) => promo.featured
